@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.open-meteo.com https://geocoding-api.open-meteo.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <title>MeteoTracker Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Previsioni Meteo</h1>
+            <p>Scopri il tempo nella tua città</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Inserisci il nome di una città..." autocomplete="off">
+            <button id="searchBtn">Cerca</button>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Ricerca in corso...</p>
+        </div>
+
+        <div id="errorBox" class="hidden"></div>
+
+        <div id="weatherResult" class="hidden">
+            <div class="location-info">
+                <h2 id="cityName"></h2>
+                <span id="countryCode"></span>
+            </div>
+            <div class="forecast-container" id="forecastCards">
+                <!-- Cards will be dynamically injected here -->
+            </div>
+        </div>
+        
+        <div class="attribution">
+            Dati meteo forniti da <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo.com</a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
